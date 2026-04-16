@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #020617; /* Slate 950 */
+    --foreground: #f8fafc;
+    --primary: #6366f1; /* Indigo 500 */
+    --primary-foreground: #ffffff;
+    --secondary: #1e1b4b; /* Indigo 950 */
+    --accent: #818cf8; /* Indigo 400 */
+    --card: rgba(30, 41, 59, 0.4); /* Glass slate 800 */
+    --border: rgba(99, 102, 241, 0.2);
+    --danger: #ef4444;
+    --success: #10b981;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0, transparent 50%);
+  min-height: 100vh;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .glass-header {
+    @apply bg-slate-950/60 backdrop-blur-md border-b border-white/5;
+  }
+
+  .neon-border {
+    @apply border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.2)];
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-indigo-500/20 active:scale-95;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulse-neon {
+  0%, 100% { box-shadow: 0 0 15px rgba(99,102,241,0.2); }
+  50% { box-shadow: 0 0 30px rgba(99,102,241,0.4); }
+}
+
+.glow-neon {
+  animation: pulse-neon 3s infinite;
+}
