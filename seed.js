@@ -1,4 +1,4 @@
-const { insertComplaint, db } = require('./backend/database');
+const { insertComplaint, db } = require('./server/database');
 
 const realisticComplaints = [
     // --- CRITICAL QUEUE (Less than 4 hours remaining) ---

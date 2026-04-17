@@ -108,7 +108,7 @@ git clone <repo-url>
 cd pro-1
 
 # ── Backend Setup ──
-cd backend
+cd server
 npm install
 
 # Create environment file
@@ -124,7 +124,7 @@ node index.js
 # → Server running at http://localhost:5000
 
 # ── Frontend Setup (new terminal) ──
-cd ../frontend
+cd ../client
 npm install
 
 # Start the development server
@@ -145,7 +145,7 @@ npm run dev
 
 ```
 pro-1/
-├── frontend/                     # React Frontend
+├── client/                     # React Frontend
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── AllComplaintsTable.jsx    # Full grievance data table
@@ -162,7 +162,7 @@ pro-1/
 │   │   └── index.css                    # Global design system
 │   └── package.json
 │
-├── backend/                     # Express Backend
+├── server/                     # Express Backend
 │   ├── index.js                # API routes & server entry
 │   ├── database.js             # SQLite queries & schema
 │   ├── ai.js                   # Gemini AI triage engine
